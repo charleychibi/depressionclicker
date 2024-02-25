@@ -13,17 +13,18 @@ Settings
 	stylesheet:stuff/bigBlue.css
 
 CSS
+
+.thing,.box-header,.box-footer,.box-bit
+{
+	background:black;
+	box-shadow:0px 0px 4px rgba(0,0,0,0.2),1px 1px 2px rgba(0,0,0,0.5),0px 0px 4px rgba(255,255,255,0.5) inset;
+}
+
   #game
   {
     background:#555555;
     font-family:"Times New Roman",Times,serif;
     color:white;
-  }
-
-  .thing
-  {
-    border-radius:8px;
-    background:black(255,255,255,0.5);
   }
 
 #box-upgrades
@@ -189,7 +190,7 @@ Buildings
 Upgrades
 	*TEMPLATE
 		on click:anim glow
-
+		on earn:hide this
 	
 	//click upgrades
 	
@@ -199,7 +200,6 @@ Upgrades
 		icon:icons[1,1]
 		cost:100 spoons
 		passive:increase spoon yield of spoonButton by 1
-		on earn: hide this
 		
 	*veggies
 		name:Veggies
@@ -207,7 +207,6 @@ Upgrades
 		icon:icons[0,1]
 		cost:200 spoons
 		passive:multiply yield of meal by 2
-		on earn: hide this
 
 	//passive upgrades
 	
@@ -217,7 +216,6 @@ Upgrades
 		icon:icons[1,0]
 		passive:multiply frequency of luckyMeds by 0.7
 		cost:500 spoons
-		on earn: hide this
 			
 Achievements
 	*TEMPLATE
