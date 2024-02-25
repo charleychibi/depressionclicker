@@ -43,7 +43,7 @@ Shinies
 		movement:onRight moveLeft fade bounce:0.05
 		frequency:30
 		frequency variation:20
-		icon:https://file.garden/ZduGn7wq23DtX82K/lucky%20meds.png
+		icon:https://file.garden/ZduGn7wq23DtX82K/luckymeds.png
 		class:bigButton
 		on click:
 			$boost=1
