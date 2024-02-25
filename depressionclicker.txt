@@ -100,12 +100,13 @@ Buildings
 		name:Recovery
 		desc:You have recovered from depression, for now.
 		icon:icons[3,0]
-		cost:5000 spoons
+		cost:10000 spoons
 		limit:1
 	
 Upgrades
 	*TEMPLATE
 		on click:anim glow
+		hide Upgrades:owned
 	
 	//click upgrades
 	
@@ -147,7 +148,7 @@ Achievements
 		
 	*clickAchiev1
 		name:Gotta start somewhere
-		desc:Click the spoon <b>10</b> times.
+		desc:Click the spoon <b>50</b> times.
 		req:10 spoonButton clicks
 		icon:icons[0,0]
 		
