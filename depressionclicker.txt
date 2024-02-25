@@ -91,11 +91,25 @@ Buttons
 		tooltip class:red
 
 	*showAvailUpgr
+		name:Available Upgrades
 		tag:upgradeSwitcher
 		class:upgradeSwitch
+		on click:
+			hide :Upgrades:owned
+			show :Upgrades:notOwned
+			anim glow
+		end
+		no tooltip
 	*showOwnedUpgr
+		name:Owned Upgrades
 		tag:upgradeSwitcher
 		class:upgradeSwitch
+		on click:
+			show :Upgrades:owned
+			hide :Upgrades:notOwned
+			anim glow
+		end
+		no tooltip
 		
 Resources
 	*spoon|spoons
@@ -175,6 +189,7 @@ Buildings
 Upgrades
 	*TEMPLATE
 		on click:anim glow
+		on earn: hide this
 	
 	//click upgrades
 	
@@ -184,7 +199,6 @@ Upgrades
 		icon:icons[1,1]
 		cost:100 spoons
 		passive:increase spoon yield of spoonButton by 1
-		on earn:dim this
 		
 	*veggies
 		name:Veggies
@@ -192,7 +206,6 @@ Upgrades
 		icon:icons[0,1]
 		cost:200 spoons
 		passive:multiply yield of meal by 2
-		on earn:dim this
 
 	//passive upgrades
 	
@@ -202,7 +215,6 @@ Upgrades
 		icon:icons[1,0]
 		passive:multiply frequency of luckyMeds by 0.7
 		cost:500 spoons
-		on earn:dim this
 			
 Achievements
 	*TEMPLATE
