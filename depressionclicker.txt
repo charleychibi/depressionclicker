@@ -15,9 +15,6 @@ Settings
 
 Layout
 	use default
-	*achievs
-	in:main
-	contains:Achievements
 		
 Buttons
 	*spoonButton
@@ -43,7 +40,7 @@ Resources
 Shinies
 	*luckyMeds
 		on click:log Woop
-		movement:onRight moveLeft fade bounce:0.05
+		movement:anywhere wiggle growShrink
 		frequency:30
 		frequency variation:20
 		icon:https://file.garden/ZduGn7wq23DtX82K/luckymeds.png
@@ -119,6 +116,7 @@ Upgrades
 		cost:100 spoons
 		passive:increase spoon yield of spoonButton by 1
 		req:10 spoons:earned
+		limit:1
 		
 	*veggies
 		name:Veggies
@@ -127,7 +125,7 @@ Upgrades
 		cost:200 spoons
 		passive:increase spoon yield of spoonButton by 1
 		req:50 spoons:earned
-		
+		limit:1
 
 	//passive upgrades
 	
@@ -138,6 +136,7 @@ Upgrades
 		passive:multiply frequency of luckyMeds by 0.7
 		cost:500 spoons
 		req:10 spoons:earned
+		limit:1
 			
 Achievements
 	*TEMPLATE
