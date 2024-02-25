@@ -1,0 +1,178 @@
+Let's make a game!
+	name:Depression Clicker
+	by:Charley MacDonald
+	desc:An idle game about mental illness and recovery.
+	created:25/2/2024
+	updated:25/2/2024
+	version:1.7
+
+Settings
+	building cost increase:120%
+	building cost refund:30%
+	spritesheet:icons, 48 by 48, https://file.garden/ZduGn7wq23DtX82K/spritesheet.png
+	stylesheet:stuff/bigBlue.css
+
+CSS
+  #game
+  {
+    background:#555555;
+    font-family:"Times New Roman",Times,serif;
+    color:black;
+  }
+
+  .thing
+  {
+    border-radius:8px;
+    background:rgba(255,255,255,0.5);
+  }
+
+Layout
+	use default
+		
+Buttons
+	*spoonButton
+		name:Generate Spoons
+		desc:Click the button to generate spoons.
+		on click:anim icon wobble
+		on click:yield 1 spoon
+		icon:https://file.garden/ZduGn7wq23DtX82K/spoonbutton.png
+		no text
+		class:bigButton hasFlares
+		icon class:shadowed
+		tooltip origin:bottom
+		tooltip class:red
+		
+Resources
+	*spoon|spoons
+		name:Spoon|Spoons
+		desc:Spoons are symbolic of how much energy you have to do things. Generate spoons and aim for mental well-being.
+		icon:icons[0,0]
+		class:noBackground
+		show earned
+		
+Shinies
+	*luckyMeds
+		on click:log Woop
+		movement:anywhere wiggle growShrink
+		frequency:30
+		frequency variation:20
+		icon:https://file.garden/ZduGn7wq23DtX82K/luckymeds.png
+		class:bigButton
+		on click:
+			$boost=1
+			//get at least 7, or between 1 and 3 minutes of our spoon production
+			$amount=max(7,random(spoons:ps*60*1,spoons:ps*60*3))*$boost
+			toast The meds grant you<//><b>[$amount] spoons</b>.
+			yield $amount spoons
+		end
+
+Buildings
+	*TEMPLATE
+		on click:anim glow
+		
+	*bed|beds
+		name:Get out of bed
+		desc:A journey of a thousand steps...<//><b>Effect:</b><.>Produces 1 spoon every 10 seconds.
+		icon:icons[2,0]
+		cost:15 spoons
+		on tick:yield 0.1 spoon
+		unlocked
+
+	*meal|meals
+		name:Depression Meal
+		desc:Manage to eat something. <//><b>Effect:</b><.>Produces 1 spoon every 2 seconds.
+		icon:icons[0,2]
+		cost:100 spoons
+		on tick:yield 0.5 spoons
+		unlocked
+
+	*teeth
+		name:Brush Teeth
+		desc: Take care of your teeth today. <//><b>Effect:</b><.>Produces 5 spoons per second.
+		icon:icons[2,2]
+		cost:600 spoons
+		on tick:yield 5 spoons
+		unlocked
+
+	*shower
+		name:Take a Shower
+		desc: Take care of your body today. <//><b>Effect:</b><.>Produces 12 spoons per second.
+		icon:icons[2,1]
+		cost:4000 spoons
+		on tick:yield 12 spoons
+		unlocked
+
+	*clean
+		name:Clean a Room
+		desc:Gather enough spoons to clean a room. <//><b>Effect:</b><.>Produces 5 spoons per second.
+		icon:icons[1,2]
+		cost:6000 spoons
+		unlocked
+	
+	*recovery
+		name:Recovery
+		desc:You have recovered from depression, for now.
+		icon:icons[3,0]
+		cost:10000 spoons
+		on earn:dim this
+		limit:1
+	
+Upgrades
+	*TEMPLATE
+		on click:anim glow
+	
+	//click upgrades
+	
+	*walk
+		name:Daily Walks
+		desc:Get out of the house for five minutes a day.<//><b>Effect:</b><.>+1 spoon/click
+		icon:icons[1,1]
+		cost:100 spoons
+		passive:increase spoon yield of spoonButton by 1
+		on earn:dim this
+		
+	*veggies
+		name:Veggies
+		desc:Eating veggies with your depression meals.<//><b>Effect:</b><.>2x Depression Meal effectiveness.
+		icon:icons[0,1]
+		cost:200 spoons
+		passive:multiply yield of meal by 2
+		on earn:dim this
+
+	//passive upgrades
+	
+	*BuildingUpgrade1
+		name:Renewed Prescription
+		desc:Meds get refilled.<//><b>Effect:</b><.>Lucky meds appear 30% more often.
+		icon:icons[1,0]
+		passive:multiply frequency of luckyMeds by 0.7
+		cost:500 spoons
+		on earn:dim this
+			
+Achievements
+	*TEMPLATE
+		on click:anim glow
+		
+	*spoonAchiev1
+		name:Baby Steps
+		desc:Have <b>1</b> spoon.
+		req:1 spoon
+		icon:icons[0,0]
+		
+	*clickAchiev1
+		name:Gotta start somewhere
+		desc:Click the spoon <b>50</b> times.
+		req:10 spoonButton clicks
+		icon:icons[0,0]
+		
+	*bunnyPsAchiev1
+		name:It Gets Better
+		desc:Produce <b>10</b> spoons per second.
+		req:10 spoons per second
+		icon:icons[0,0]
+	
+	*recoveryAchiev
+		name:Recovery!
+		desc:Complete building the <b>Recovery</b>.<//>This is it. You beat the game!
+		req:1 recovery
+		icon:icons[3,1]
