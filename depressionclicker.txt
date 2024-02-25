@@ -19,7 +19,7 @@ Layout
 Buttons
 	*spoonButton
 		name:Generate Spoons
-		desc:Click the button to generate spoons
+		desc:Click the button to generate spoons.
 		on click:anim icon wobble
 		on click:yield 1 spoon
 		icon:https://file.garden/ZduGn7wq23DtX82K/spoonbutton.png
@@ -43,7 +43,7 @@ Shinies
 		movement:onRight moveLeft fade bounce:0.05
 		frequency:30
 		frequency variation:20
-		icon:icons[0,1]
+		icon:icons[2]
 		class:bigButton
 		on click:
 			$boost=1
