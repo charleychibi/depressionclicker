@@ -128,7 +128,7 @@ Upgrades
 
 	//passive upgrades
 	
-	*prescription
+	*BuildingUpgrade1
 		name:Renewed Prescription
 		desc:Meds get refilled.<//><b>Effect:</b><.>Lucky meds appear 30% more often.
 		icon:icons[0,1]
@@ -136,7 +136,7 @@ Upgrades
 		cost:500 spoons
 		req:10 spoons:earned
 
-	*meal
+	*BuildingUpgrade2
 		name:Depression Meal
 		desc:You managed to eat something.<//><b>Effect:</b><.>Getting out of bed is 2x easier.
 		icon:icons[1,2]
