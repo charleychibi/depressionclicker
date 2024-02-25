@@ -92,7 +92,7 @@ Buildings
 	*clean
 		name:Clean a Room
 		desc:Gather enough spoons to clean a room. <//><b>Effect:</b><.>Produces 5 spoons per second.
-		icon:icons[4,1]
+		icon:icons[2,2]
 		cost:6000 spoons
 		on tick:yield 5 spoons
 	
