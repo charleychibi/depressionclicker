@@ -11,7 +11,6 @@ Settings
 	building cost refund:30%
 	spritesheet:icons, 48 by 48, https://file.garden/ZduGn7wq23DtX82K/spritesheet.png
 	stylesheet:stuff/bigBlue.css
-	stylesheet:https://raw.githubusercontent.com/charleychibi/depressionclicker/main/style.css
 
 CSS
   #game
@@ -20,6 +19,12 @@ CSS
     font-family:"Times New Roman",Times,serif;
     color:white;
   }
+
+.thing,.box-header,.box-footer,.box-bit
+{
+	background:black;
+	box-shadow:0px 0px 4px rgba(0,0,0,0.2),1px 1px 2px rgba(0,0,0,0.5),0px 0px 4px rgba(255,255,255,0.5) inset;
+}
 
 Layout
 	use default
