@@ -65,7 +65,7 @@ Buildings
 		on tick:yield 0.1 spoon
 		unlocked
 
-	*meal
+	*meal|meals
 		name:Depression Meal
 		desc:Manage to eat something. <//><b>Effect:</b><.>Produces 1 spoon every 2 seconds.
 		icon:icons[1,2]
@@ -137,11 +137,11 @@ Upgrades
 		req:10 spoons:earned
 
 	*BuildingUpgrade2
-		name:Depression Meal
-		desc:You managed to eat something.<//><b>Effect:</b><.>Getting out of bed is 2x easier.
-		icon:icons[1,2]
+		name:veggies
+		desc:Eating veggies with your depression meals.<//><b>Effect:</b><.>Depression Meal is 2x more effective.
+		icon:icons[1,1]
 		cost:100 spoons
-		passive:multiply yield of bed by 2
+		passive:multiply yield of meal by 2
 		req:(beds>=10)
 			
 Achievements
