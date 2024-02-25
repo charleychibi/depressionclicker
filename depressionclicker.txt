@@ -15,6 +15,9 @@ Settings
 
 Layout
 	use default
+	*achievs
+	in:main
+	contains:Achievements
 		
 Buttons
 	*spoonButton
@@ -71,7 +74,7 @@ Buildings
 		icon:icons[0,2]
 		cost:100 spoons
 		on tick:yield 0.5 spoons
-		req:100 spoons:earned
+		unlocked
 
 	*teeth
 		name:Brush Teeth
@@ -79,22 +82,22 @@ Buildings
 		icon:icons[2,2]
 		cost:600 spoons
 		on tick:yield 5 spoons
-		req:100 spoons:earned
+		unlocked
 
 	*shower
 		name:Take a Shower
 		desc: Take care of your body today. <//><b>Effect:</b><.>Produces 12 spoons per second.
-		icon:icons[1,2]
+		icon:icons[2,1]
 		cost:4000 spoons
 		on tick:yield 12 spoons
-		req:4000 spoons:earned
+		unlocked
 
 	*clean
 		name:Clean a Room
 		desc:Gather enough spoons to clean a room. <//><b>Effect:</b><.>Produces 5 spoons per second.
-		icon:icons[2,1]
+		icon:icons[1,2]
 		cost:6000 spoons
-		on tick:yield 5 spoons
+		unlocked
 	
 	*recovery
 		name:Recovery
@@ -120,7 +123,7 @@ Upgrades
 	*veggies
 		name:Veggies
 		desc:Eating veggies with your depression meals.<//><b>Effect:</b><.>+1 spoon/click
-		icon:icons[1,0]
+		icon:icons[0,1]
 		cost:200 spoons
 		passive:increase spoon yield of spoonButton by 1
 		req:50 spoons:earned
@@ -131,7 +134,7 @@ Upgrades
 	*BuildingUpgrade1
 		name:Renewed Prescription
 		desc:Meds get refilled.<//><b>Effect:</b><.>Lucky meds appear 30% more often.
-		icon:icons[0,1]
+		icon:icons[1,0]
 		passive:multiply frequency of luckyMeds by 0.7
 		cost:500 spoons
 		req:10 spoons:earned
@@ -162,4 +165,4 @@ Achievements
 		name:Recovery!
 		desc:Complete building the <b>Recovery</b>.<//>This is it. You beat the game!
 		req:1 recovery
-		icon:icons[1,4]
+		icon:icons[3,1]
