@@ -10,7 +10,7 @@ Settings
 	background:black
 	building cost increase:120%
 	building cost refund:30%
-	spritesheet:icons, 48 by 48, https://file.garden/ZduGn7wq23DtX82K/spritesheet2.png
+	spritesheet:icons, 48 by 48, https://file.garden/ZduGn7wq23DtX82K/spritesheet.png
 	stylesheet:stuff/bigBlue.css
 
 Layout
@@ -68,7 +68,7 @@ Buildings
 	*meal|meals
 		name:Depression Meal
 		desc:Manage to eat something. <//><b>Effect:</b><.>Produces 1 spoon every 2 seconds.
-		icon:icons[2,1]
+		icon:icons[2,0]
 		cost:100 spoons
 		on tick:yield 0.5 spoons
 		req:100 spoons:earned
@@ -76,7 +76,7 @@ Buildings
 	*teeth
 		name:Brush Teeth
 		desc: Take care of your teeth today. <//><b>Effect:</b><.>Produces 5 spoons per second.
-		icon:icons[3,1]
+		icon:icons[2,2]
 		cost:600 spoons
 		on tick:yield 5 spoons
 		req:100 spoons:earned
@@ -84,7 +84,7 @@ Buildings
 	*shower
 		name:Take a Shower
 		desc: Take care of your body today. <//><b>Effect:</b><.>Produces 12 spoons per second.
-		icon:icons[0,2]
+		icon:icons[1,2]
 		cost:4000 spoons
 		on tick:yield 12 spoons
 		req:4000 spoons:earned
@@ -92,7 +92,7 @@ Buildings
 	*clean
 		name:Clean a Room
 		desc:Gather enough spoons to clean a room. <//><b>Effect:</b><.>Produces 5 spoons per second.
-		icon:icons[2,2]
+		icon:icons[2,1]
 		cost:6000 spoons
 		on tick:yield 5 spoons
 	
@@ -112,7 +112,7 @@ Upgrades
 	*walk
 		name:Daily Walks
 		desc:Get out of the house for five minutes a day.<//><b>Effect:</b><.>+1 spoon/click
-		icon:icons[1,0]
+		icon:icons[1,1]
 		cost:100 spoons
 		passive:increase spoon yield of spoonButton by 1
 		req:10 spoons:earned
@@ -120,7 +120,7 @@ Upgrades
 	*veggies
 		name:Veggies
 		desc:Eating veggies with your depression meals.<//><b>Effect:</b><.>+1 spoon/click
-		icon:icons[1,1]
+		icon:icons[1,0]
 		cost:200 spoons
 		passive:increase spoon yield of spoonButton by 1
 		req:50 spoons:earned
@@ -162,4 +162,4 @@ Achievements
 		name:Recovery!
 		desc:Complete building the <b>Recovery</b>.<//>This is it. You beat the game!
 		req:1 recovery
-		icon:icons[0,4]
+		icon:icons[1,4]
