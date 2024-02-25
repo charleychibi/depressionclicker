@@ -135,14 +135,6 @@ Upgrades
 		passive:multiply frequency of luckyMeds by 0.7
 		cost:500 spoons
 		req:10 spoons:earned
-
-	*BuildingUpgrade2
-		name:veggies
-		desc:Eating veggies with your depression meals.<//><b>Effect:</b><.>Depression Meal is 2x more effective.
-		icon:icons[1,1]
-		cost:100 spoons
-		passive:multiply yield of meal by 2
-		req:(beds>=10)
 			
 Achievements
 	*TEMPLATE
