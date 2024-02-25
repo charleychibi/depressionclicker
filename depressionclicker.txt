@@ -10,7 +10,7 @@ Settings
 	building cost increase:120%
 	building cost refund:30%
 	spritesheet:icons, 48 by 48, https://file.garden/ZduGn7wq23DtX82K/spritesheet.png
-	stylesheet:stuff/bigBlue.css
+	stylesheet:https://raw.githubusercontent.com/charleychibi/depressionclicker/main/style.css
 
 CSS
   #game
@@ -18,12 +18,6 @@ CSS
     background:#555555;
     font-family:"Times New Roman",Times,serif;
     color:white;
-  }
-
-  .thing
-  {
-    border-radius:8px;
-    background:rgba(255,255,255,0.5);
   }
 
 Layout
