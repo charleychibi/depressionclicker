@@ -47,18 +47,10 @@ Shinies
 		class:bigButton
 		on click:
 			$boost=1
-			if (have clover) $boost=4
-			if (chance(25%))
-				//get at least 7, or between 1 and 3 minutes of our spoon production
-				$amount=max(7,random(spoons:ps*60*1,spoons:ps*60*3))*$boost
-				toast The meds grant you<//><b>[$amount] spoons</b>.
-				yield $amount spoons
-			else
-				$amount=1*$boost
-				toast The meds grant you<//><b>[$amount] golden spoons[s?$amount]</b>!
-				yield $amount goldenSpoon
-			end
-		end
+			//get at least 7, or between 1 and 3 minutes of our spoon production
+			$amount=max(7,random(spoons:ps*60*1,spoons:ps*60*3))*$boost
+			toast The meds grant you<//><b>[$amount] spoons</b>.
+			yield $amount spoons
 
 Buildings
 	*TEMPLATE
