@@ -65,7 +65,7 @@ Buildings
 		on tick:yield 0.1 spoon
 		unlocked
 
-	*meal|meals
+	*meal
 		name:Depression Meal
 		desc:Manage to eat something. <//><b>Effect:</b><.>Produces 1 spoon every 2 seconds.
 		icon:icons[1,2]
