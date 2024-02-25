@@ -10,8 +10,8 @@ Settings
 	background:black
 	building cost increase:120%
 	building cost refund:30%
-	spritesheet:icons, 48 by 48, https://file.garden/ZduGn7wq23DtX82K/spritesheet2.png
-	stylesheet:stuff/basic.css
+	spritesheet:icons, 48 by 48, https://file.garden/ZduGn7wq23DtX82K/spritesheet3.png
+	stylesheet:stuff/bigBlue.css
 
 Layout
 	use default
