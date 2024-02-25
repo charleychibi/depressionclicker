@@ -43,7 +43,7 @@ Shinies
 		movement:onRight moveLeft fade bounce:0.05
 		frequency:30
 		frequency variation:20
-		icon:icons[2]
+		icon:icons[1,0]
 		class:bigButton
 		on click:
 			$boost=1
@@ -68,7 +68,7 @@ Buildings
 	*meal|meals
 		name:Depression Meal
 		desc:Manage to eat something. <//><b>Effect:</b><.>Produces 1 spoon every 2 seconds.
-		icon:icons[1,2]
+		icon:icons[2,1]
 		cost:100 spoons
 		on tick:yield 0.5 spoons
 		req:100 spoons:earned
@@ -76,7 +76,7 @@ Buildings
 	*teeth
 		name:Brush Teeth
 		desc: Take care of your teeth today. <//><b>Effect:</b><.>Produces 5 spoons per second.
-		icon:icons[1,3]
+		icon:icons[3,1]
 		cost:600 spoons
 		on tick:yield 5 spoons
 		req:100 spoons:earned
@@ -84,7 +84,7 @@ Buildings
 	*shower
 		name:Take a Shower
 		desc: Take care of your body today. <//><b>Effect:</b><.>Produces 12 spoons per second.
-		icon:icons[2,0]
+		icon:icons[0,2]
 		cost:4000 spoons
 		on tick:yield 12 spoons
 		req:4000 spoons:earned
@@ -92,7 +92,7 @@ Buildings
 	*clean
 		name:Clean a Room
 		desc:Gather enough spoons to clean a room. <//><b>Effect:</b><.>Produces 5 spoons per second.
-		icon:icons[1,4]
+		icon:icons[4,1]
 		cost:6000 spoons
 		on tick:yield 5 spoons
 	
