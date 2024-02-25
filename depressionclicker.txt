@@ -4,13 +4,13 @@ Let's make a game!
 	desc:An idle game about mental illness and recovery.
 	created:25/2/2024
 	updated:25/2/2024
-	version:1.3
+	version:1.7
 
 Settings
 	background:black
 	building cost increase:120%
 	building cost refund:30%
-	spritesheet:icons, 48 by 48, stuff/bunnyIcons.png
+	spritesheet:icons, 48 by 48, https://file.garden/ZduGn7wq23DtX82K/spritesheet.png
 	stylesheet:stuff/bigBlue.css
 
 Layout
@@ -22,7 +22,7 @@ Buttons
 		desc:Click the button to generate spoons
 		on click:anim icon wobble
 		on click:yield 1 spoon
-		icon:spoonbutton.png
+		icon:https://file.garden/ZduGn7wq23DtX82K/spoonbutton.png
 		no text
 		class:bigButton hasFlares
 		icon class:shadowed
@@ -32,7 +32,7 @@ Buttons
 Resources
 	*spoon|spoons
 		name:Spoon|Spoons
-		desc:Spoons are symbolic of how much energy you have to do things. Generate spoons and aim for mental wellbeing.
+		desc:Spoons are symbolic of how much energy you have to do things. Generate spoons and aim for mental well-being.
 		icon:icons[0,0]
 		class:noBackground
 		show earned
@@ -43,7 +43,7 @@ Shinies
 		movement:onRight moveLeft fade bounce:0.05
 		frequency:30
 		frequency variation:20
-		icon:stuff/luckyBunny.png
+		icon:icons[0,1]
 		class:bigButton
 		on click:
 			$boost=1
@@ -51,6 +51,7 @@ Shinies
 			$amount=max(7,random(spoons:ps*60*1,spoons:ps*60*3))*$boost
 			toast The meds grant you<//><b>[$amount] spoons</b>.
 			yield $amount spoons
+		end
 
 Buildings
 	*TEMPLATE
@@ -59,30 +60,59 @@ Buildings
 	*bed|beds
 		name:Get out of bed
 		desc:A journey of a thousand steps...<//><b>Effect:</b><.>Produces 1 spoon every 10 seconds.
-		icon:icons[3,0]
+		icon:icons[2,0]
 		cost:15 spoons
 		on tick:yield 0.1 spoon
 		unlocked
+
+	*meal|meals
+		name:Depression Meal
+		desc:Manage to eat something. <//><b>Effect:</b><.>Produces 1 spoon every 2 seconds.
+		icon:icons[1,2]
+		cost:100 spoons
+		on tick:yield 0.5 spoons
+		req:100 spoons:earned
+
+	*teeth
+		name:Brush Teeth
+		desc: Take care of your teeth today. <//><b>Effect:</b><.>Produces 5 spoons per second.
+		icon:icons[1,3]
+		cost:600 spoons
+		on tick:yield 5 spoons
+		req:100 spoons:earned
+
+	*shower
+		name:Take a Shower
+		desc: Take care of your body today. <//><b>Effect:</b><.>Produces 12 spoons per second.
+		icon:icons[2,0]
+		cost:4000 spoons
+		on tick:yield 12 spoons
+		req:4000 spoons:earned
+
+	*clean
+		name:Clean a Room
+		desc:Gather enough spoons to clean a room. <//><b>Effect:</b><.>Produces 5 spoons per second.
+		icon:icons[1,4]
+		cost:6000 spoons
+		on tick:yield 5 spoons
 	
-	*hutch|hutches
-		name:Rabbit hutch|Rabbit hutches
-		desc:A bit roomier than a cage, with enough space to hop around.<//><b>Effect:</b><.>Produces 1 rabbit every 2 seconds.
-		icon:icons[3,1]
-		cost:100 bunnies
-		on tick:yield 0.5 bunnies
-		req:100 bunnies:earned
+	*recovery
+		name:Recovery
+		desc:You have recovered from depression, for now.
+		icon:icons[3,0]
+		cost:5000 spoons
+		limit:1
 	
 Upgrades
 	*TEMPLATE
 		on click:anim glow
 	
-	//increases mental wellbeing
 	//click upgrades
 	
 	*walk
 		name:Daily Walks
 		desc:Get out of the house for five minutes a day.<//><b>Effect:</b><.>+1 spoon/click
-		icon:icons[1,1]
+		icon:icons[1,0]
 		cost:100 spoons
 		passive:increase spoon yield of spoonButton by 1
 		req:10 spoons:earned
@@ -90,7 +120,7 @@ Upgrades
 	*veggies
 		name:Veggies
 		desc:Eating veggies with your depression meals.<//><b>Effect:</b><.>+1 spoon/click
-		icon:icons[1,2]
+		icon:icons[1,1]
 		cost:200 spoons
 		passive:increase spoon yield of spoonButton by 1
 		req:50 spoons:earned
@@ -98,33 +128,21 @@ Upgrades
 
 	//passive upgrades
 	
-	*buildingUpgrade1
-		name:Sippy bottles
-		desc:Your bunnies can drink their fill!<//><b>Effect:</b><.>rabbit cage production x2<.>rabbit hutch production x2<.>rabbit coop production x2
-		icon:icons[2,0] icons[3,0]
-		cost:1000 bunnies
-		passive:multiply yield of cage by 2
-		passive:multiply yield of hutch by 2
-		passive:multiply yield of coop by 2
-		req:(cages>=10 or hutches>=10 or coops>=10)
-		
-		
-	//golden spoon upgrades
-	
-	*goldenTouch
-		name:Golden touch
-		desc:Increases chance of golden spoons.<//><b>Effect:</b><.>1% chance of gaining 1 golden spoon per spoon click
-		icon:icons[2,5]
-		cost:1 goldenSpoon
-		req:1 goldenSpoon:earned
-		
 	*prescription
 		name:Renewed Prescription
-		desc:Meds get refilled.<//><b>Effect:</b><.>lucky meds appear 30% more often
-		icon:icons[2,6]
+		desc:Meds get refilled.<//><b>Effect:</b><.>Lucky meds appear 30% more often.
+		icon:icons[0,1]
 		passive:multiply frequency of luckyMeds by 0.7
-		cost:5 goldenSpoons
-		req:1 goldenSpoon:earned
+		cost:500 spoons
+		req:10 spoons:earned
+
+	*meal
+		name:Depression Meal
+		desc:You managed to eat something.<//><b>Effect:</b><.>Getting out of bed is 2x easier.
+		icon:icons[1,2]
+		cost:100 spoons
+		passive:multiply yield of bed by 2
+		req:(beds>=10)
 			
 Achievements
 	*TEMPLATE
@@ -134,22 +152,22 @@ Achievements
 		name:Baby Steps
 		desc:Have <b>1</b> spoon.
 		req:1 spoon
-		icon:icons[2,4] icons[0,2] icons[0,6]
+		icon:icons[0,0]
 		
 	*clickAchiev1
 		name:Gotta start somewhere
 		desc:Click the spoon <b>10</b> times.
 		req:10 spoonButton clicks
-		icon:icons[2,2] icons[0,2] icons[0,6]
+		icon:icons[0,0]
 		
 	*bunnyPsAchiev1
 		name:It Gets Better
 		desc:Produce <b>10</b> spoons per second.
 		req:10 spoons per second
-		icon:icons[2,3] icons[0,2] icons[0,6]
+		icon:icons[0,0]
 	
 	*recoveryAchiev
 		name:Recovery!
 		desc:Complete building the <b>Recovery</b>.<//>This is it. You beat the game!
 		req:1 recovery
-		icon:icons[3,8] icons[0,4]
+		icon:icons[0,4]
