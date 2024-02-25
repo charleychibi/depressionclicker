@@ -20,14 +20,62 @@ CSS
     color:white;
   }
 
-.thing,.box-header,.box-footer,.box-bit
+  .thing
+  {
+    border-radius:8px;
+    background:black(255,255,255,0.5);
+  }
+
+#box-upgrades
 {
-	background:black;
-	box-shadow:0px 0px 4px rgba(0,0,0,0.2),1px 1px 2px rgba(0,0,0,0.5),0px 0px 4px rgba(255,255,255,0.5) inset;
+	top: 43px;
+}
+
+.box-header, .box-footer
+{
+	padding: 8px;
+	font-size: 15px;
+	font-weight: bold;
+}
+
+#box-upgrButtons
+{
+	width: 50%;
+	left: 50%;
+	height: 43px;
+}
+
+.upgradeSwitch
+{
+	height: 43px;
+	width: 50%;
+	margin: 0px;
+	float: left;
 }
 
 Layout
-	use default
+*main
+  contains:res, buttons
+  *res
+    contains:Resources
+    class:fullWidth
+  *buttons
+    contains:Buttons
+*store
+  contains:buildings, upgrades, upgrButtons
+  *buildings
+    contains:BulkDisplay, Buildings
+    header:Buildings
+    tooltip origin:left
+
+*upgrButtons
+contains:tag:upgradeSwitcher
+  *upgrades
+    contains:Upgrades
+    header:Upgrades
+    costs:hide
+    names:hide
+
 		
 Buttons
 	*spoonButton
@@ -41,6 +89,13 @@ Buttons
 		icon class:shadowed
 		tooltip origin:bottom
 		tooltip class:red
+
+	*showAvailUpgr
+		tag:upgradeSwitcher
+		class:upgradeSwitch
+	*showOwnedUpgr
+		tag:upgradeSwitcher
+		class:upgradeSwitch
 		
 Resources
 	*spoon|spoons
