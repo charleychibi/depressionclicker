@@ -68,7 +68,7 @@ Buildings
 	*meal|meals
 		name:Depression Meal
 		desc:Manage to eat something. <//><b>Effect:</b><.>Produces 1 spoon every 2 seconds.
-		icon:icons[2,0]
+		icon:icons[0,2]
 		cost:100 spoons
 		on tick:yield 0.5 spoons
 		req:100 spoons:earned
