@@ -7,11 +7,18 @@ Let's make a game!
 	version:1.7
 
 Settings
-	background:black
 	building cost increase:120%
 	building cost refund:30%
 	spritesheet:icons, 48 by 48, https://file.garden/ZduGn7wq23DtX82K/spritesheet.png
 	stylesheet:stuff/bigBlue.css
+
+CSS
+  #game
+  {
+    background:#555555;
+    font-family:"Times New Roman",Times,serif;
+    color:black;
+  }
 
 Layout
 	use default
@@ -101,6 +108,7 @@ Buildings
 		desc:You have recovered from depression, for now.
 		icon:icons[3,0]
 		cost:10000 spoons
+		on earn:dim this
 		limit:1
 	
 Upgrades
@@ -115,7 +123,7 @@ Upgrades
 		icon:icons[1,1]
 		cost:100 spoons
 		passive:increase spoon yield of spoonButton by 1
-		on earn:hide this
+		on earn:dim this
 		
 	*veggies
 		name:Veggies
@@ -123,7 +131,7 @@ Upgrades
 		icon:icons[0,1]
 		cost:200 spoons
 		passive:multiply yield of meal by 2
-		on earn:hide this
+		on earn:dim this
 
 	//passive upgrades
 	
@@ -133,7 +141,7 @@ Upgrades
 		icon:icons[1,0]
 		passive:multiply frequency of luckyMeds by 0.7
 		cost:500 spoons
-		on earn:hide this
+		on earn:dim this
 			
 Achievements
 	*TEMPLATE
