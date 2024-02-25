@@ -106,7 +106,6 @@ Buildings
 Upgrades
 	*TEMPLATE
 		on click:anim glow
-		hide Upgrades:owned
 	
 	//click upgrades
 	
@@ -117,14 +116,16 @@ Upgrades
 		cost:100 spoons
 		passive:increase spoon yield of spoonButton by 1
 		req:10 spoons:earned
+		on earn:hide this
 		
 	*veggies
 		name:Veggies
-		desc:Eating veggies with your depression meals.<//><b>Effect:</b><.>+1 spoon/click
+		desc:Eating veggies with your depression meals.<//><b>Effect:</b><.>2x Depression Meal effectiveness.
 		icon:icons[0,1]
 		cost:200 spoons
-		passive:increase spoon yield of spoonButton by 1
-		req:50 spoons:earned
+		passive:multiply yield of meal by 2
+		req:3 spoons per second
+		on earn:hide this
 
 	//passive upgrades
 	
@@ -135,6 +136,7 @@ Upgrades
 		passive:multiply frequency of luckyMeds by 0.7
 		cost:500 spoons
 		req:10 spoons:earned
+		on earn:hide this
 			
 Achievements
 	*TEMPLATE
